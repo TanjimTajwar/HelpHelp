@@ -1,23 +1,15 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:trio_angle/main.dart';
+import 'package:sanjida_go/main.dart';
 
 void main() {
-  testWidgets('App loads and shows home page', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const TrioAngleApp());
+  testWidgets('Home screen shows tool list', (WidgetTester tester) async {
+    await tester.pumpWidget(const SanjidaGoApp());
 
-    // Verify that our app title is shown.
-    expect(find.text('Welcome to Trio-Angle'), findsOneWidget);
-    expect(find.text('BMI Calculator'), findsOneWidget);
-    expect(find.text('String Reverser'), findsOneWidget);
-    expect(find.text('Temperature Converter'), findsOneWidget);
+    expect(find.text('Sanjida Go'), findsOneWidget);
+    expect(find.text('String reversal'), findsOneWidget);
+    expect(find.text('BMI'), findsOneWidget);
+    expect(find.text('Temperature'), findsOneWidget);
+    expect(find.text('Islamic inheritance'), findsOneWidget);
   });
 }

@@ -1,29 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import '../Homepage/home.dart';
-import 'theme.dart';
+
+import 'screens/home_screen.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
-  runApp(const TrioAngleApp());
+  runApp(const SanjidaGoApp());
 }
 
-class TrioAngleApp extends StatelessWidget {
-  const TrioAngleApp({super.key});
+class SanjidaGoApp extends StatelessWidget {
+  const SanjidaGoApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Multi App',
-      debugShowCheckedModeBanner: false,
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      themeMode: ThemeMode.system,
-      home: const HomePage(),
+      title: 'Sanjida Go',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF0D47A1)),
+        useMaterial3: true,
+      ),
+      home: const HomeScreen(),
     );
   }
 }
